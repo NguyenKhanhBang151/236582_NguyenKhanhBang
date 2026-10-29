@@ -120,3 +120,103 @@ footer { padding: 25px 0 5px; text-align: center; font-size: 10px; color: #9aa4b
 .detail-list > div { display: grid; grid-template-columns: 150px 1fr; gap: 10px; font-size: 12px; border-bottom: 1px solid #f0f2f6; padding-bottom: 10px; }
 .detail-list dt { color: #8a95a5; font-weight: 700; }
 .detail-list dd { margin: 0; color: #2b3648; overflow-wrap: anywhere; }
+/* ===== GOI NANG CAP PRO 3D ===== */
+body {
+  font-family: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  background:
+    radial-gradient(900px 480px at 85% -10%, rgba(255, 138, 61, .20), transparent 60%),
+    radial-gradient(700px 420px at -10% 110%, rgba(255, 77, 141, .12), transparent 60%),
+    linear-gradient(160deg, #fdf6ef 0%, #f4f6fb 55%, #eef2f9 100%);
+  background-attachment: fixed;
+}
+.sidebar {
+  background: linear-gradient(185deg, rgba(255,255,255,.92), rgba(255,248,240,.86));
+  backdrop-filter: blur(14px);
+  border-right: 1px solid rgba(233, 120, 40, .14);
+  box-shadow: 12px 0 32px -18px rgba(146, 64, 14, .25);
+}
+.brand { font-weight: 800; letter-spacing: -.02em; }
+.side-item { border-radius: 14px; transition: all .25s ease; }
+.side-item:hover { transform: translateX(4px); }
+.side-item.active {
+  background: linear-gradient(120deg, #ff8a3d, #ff5e62);
+  color: #fff;
+  box-shadow: 0 10px 22px -8px rgba(255, 94, 98, .55);
+}
+.topbar h1 {
+  font-weight: 800; letter-spacing: -.02em;
+  background: linear-gradient(92deg, #1f2430 20%, #b34700 60%, #ff5e62);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.status { border-radius: 999px; font-weight: 600; box-shadow: 0 6px 16px -6px rgba(31,36,48,.25); }
+.welcome {
+  position: relative; overflow: hidden; border-radius: 26px;
+  background:
+    radial-gradient(420px 200px at 88% 0%, rgba(255,255,255,.35), transparent 60%),
+    linear-gradient(115deg, #ffb25e 0%, #ff8a3d 45%, #ff5e62 100%);
+  box-shadow: 0 24px 44px -16px rgba(255, 110, 64, .55), inset 0 1px 0 rgba(255,255,255,.5);
+}
+.welcome-emoji {
+  font-size: 92px; line-height: 1; display: inline-block;
+  filter: drop-shadow(0 18px 18px rgba(146, 64, 14, .35));
+  animation: fm-float 3.2s ease-in-out infinite;
+}
+@keyframes fm-float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-10px) rotate(3deg); } }
+.stat-card {
+  position: relative; border-radius: 20px; border: 1px solid rgba(255,255,255,.7);
+  background: linear-gradient(180deg, #ffffff, #fffaf4);
+  box-shadow: 0 14px 30px -14px rgba(31, 36, 48, .22), inset 0 1px 0 #fff;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.stat-card::before {
+  content: ""; position: absolute; top: 0; left: 18px; right: 18px; height: 4px;
+  border-radius: 0 0 6px 6px; background: linear-gradient(90deg, #ff8a3d, #ff5e62);
+}
+.stat-card:hover { transform: translateY(-5px); box-shadow: 0 26px 40px -16px rgba(31,36,48,.30); }
+.food-grid { perspective: 1200px; }
+.food-card {
+  border-radius: 22px; border: 1px solid rgba(255,255,255,.75);
+  background: linear-gradient(180deg, #ffffff, #fffcf8);
+  box-shadow: 0 16px 34px -16px rgba(31, 36, 48, .25), inset 0 1px 0 #fff;
+  transition: transform .35s cubic-bezier(.2,.7,.3,1.2), box-shadow .35s ease;
+  animation: fm-up .5s ease both;
+}
+.food-card:hover {
+  transform: translateY(-8px) rotateX(3deg) rotateY(-2deg);
+  box-shadow: 0 34px 54px -20px rgba(255, 110, 64, .45), 0 18px 28px -18px rgba(31,36,48,.35);
+}
+.food-card:nth-child(2) { animation-delay: .07s; }
+.food-card:nth-child(3) { animation-delay: .14s; }
+.food-card:nth-child(4) { animation-delay: .21s; }
+@keyframes fm-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.food-picture {
+  background:
+    radial-gradient(220px 120px at 50% 0%, rgba(255,255,255,.8), transparent 65%),
+    linear-gradient(150deg, #ffe9d2, #ffd9c2 55%, #ffc9d6);
+}
+.food-img { filter: drop-shadow(0 14px 14px rgba(146, 64, 14, .30)); transition: transform .35s ease; }
+.food-card:hover .food-img { transform: scale(1.14) rotate(-4deg) translateY(-4px); }
+.food-code {
+  background: linear-gradient(120deg, #fff1e2, #ffe3ec); color: #b34700;
+  border: 1px solid rgba(255, 138, 61, .35); font-weight: 700;
+}
+.primary-btn {
+  background: linear-gradient(120deg, #ff8a3d, #ff5e62); color: #fff; border: none;
+  border-radius: 14px; font-weight: 700;
+  box-shadow: 0 12px 24px -8px rgba(255, 94, 98, .55), inset 0 1px 0 rgba(255,255,255,.45);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.primary-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 30px -10px rgba(255, 94, 98, .6); }
+.primary-btn:active { transform: translateY(1px) scale(.98); }
+.detail-btn, .edit-btn, .delete-btn, .secondary-btn { border-radius: 11px; font-weight: 600; transition: all .2s ease; }
+.detail-btn:hover, .edit-btn:hover, .delete-btn:hover, .secondary-btn:hover { transform: translateY(-2px); }
+.toolbar input, .toolbar select, .food-form input, .food-form select, .food-form textarea {
+  border-radius: 13px; transition: box-shadow .2s ease, border-color .2s ease;
+}
+.toolbar input:focus, .food-form input:focus, .food-form select:focus, .food-form textarea:focus {
+  outline: none; border-color: #ff8a3d;
+  box-shadow: 0 0 0 4px rgba(255, 138, 61, .20);
+}
+.detail-panel { border-radius: 24px; box-shadow: 0 40px 80px -24px rgba(31, 36, 48, .5); }
+.food-form { border-radius: 22px; box-shadow: 0 24px 48px -20px rgba(31, 36, 48, .28); }
+
