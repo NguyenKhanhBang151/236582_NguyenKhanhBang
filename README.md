@@ -121,5 +121,6 @@ Mở giao diện: http://localhost:8080
 | Docker Hub backend | https://hub.docker.com/r/khanhbang151/backend |
 | Docker Hub frontend | https://hub.docker.com/r/khanhbang151/frontend |
 | Render frontend |https://web-236582.onrender.com |
-| Render backend API | _Cập nhật sau Câu 8_ |
+| | Render backend API | https://api-236582.onrender.com |
+
 | MongoDB Atlas database | `236582_NguyenKhanhBang` / collection `foods` |
