@@ -120,6 +120,6 @@ Mở giao diện: http://localhost:8080
 | GitHub | https://github.com/NguyenKhanhBang151/236582_NguyenKhanhBang |
 | Docker Hub backend | https://hub.docker.com/r/khanhbang151/backend |
 | Docker Hub frontend | https://hub.docker.com/r/khanhbang151/frontend |
-| Render frontend | _Cập nhật sau Câu 7_ |
+| Render frontend |https://web-236582.onrender.com |
 | Render backend API | _Cập nhật sau Câu 8_ |
 | MongoDB Atlas database | `236582_NguyenKhanhBang` / collection `foods` |
