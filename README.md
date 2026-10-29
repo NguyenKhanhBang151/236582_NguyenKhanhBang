@@ -93,4 +93,23 @@ _Hướng dẫn chạy backend và frontend bằng Docker sẽ được cập nh
 | Docker Hub frontend | _Cập nhật sau Câu 6_ |
 | Render frontend | _Cập nhật sau Câu 7_ |
 | Render backend API | _Cập nhật sau Câu 8_ |
-| MongoDB Atlas database | `236582_NguyenKhanhBang` / collection `foods` |
+| MongoDB Atlas database | `236582_NguyenKhanhBang` / collection `foods` 
+### Backend (Câu 5)
+
+Image đã build và đẩy lên Docker Hub: https://hub.docker.com/r/khanhbang151/backend
+
+Build image tại máy:
+
+    cd backend
+    docker build -t khanhbang151/backend:latest .
+
+Chạy container (cần file backend/.env chứa PORT và MONGODB_URI):
+
+    docker run -d --name foodmanager-backend -p 5001:5000 --env-file .env khanhbang151/backend:latest
+
+Kiểm tra hoạt động: http://localhost:5001/health
+
+### Frontend (Câu 6)
+
+_Cập nhật ở Câu 6._
+|
