@@ -28,23 +28,24 @@ Chức năng chính: xem danh sách, xem chi tiết, thêm, sửa, xóa và tìm
 | GitHub repository | `236582_NguyenKhanhBang` |
 | MongoDB database | `236582_NguyenKhanhBang` |
 | MongoDB collection | `foods` |
-| Docker Hub backend image | `236582nguyenkhanhbang/backend` |
-| Docker Hub frontend image | `236582nguyenkhanhbang/frontend` |
+| Docker Hub backend image | `khanhbang151/backend` |
+| Docker Hub frontend image | `khanhbang151/frontend` |
 | Render backend service | `api-236582` |
 | Render frontend service | `web-236582` |
 
 ## 4. Cấu trúc dự án
 
-```text
+​```text
 236582_NguyenKhanhBang/
-├── frontend/          # React + Vite
+├── frontend/          # React + Vite (có Dockerfile)
 │   └── src/
 │       ├── App.jsx
 │       └── App.css
-├── backend/           # Node.js + Express API
+├── backend/           # Node.js + Express API (có Dockerfile)
+├── foods-seed.json    # Dữ liệu món ăn mẫu
 ├── README.md
 └── .gitignore
-```
+​```
 
 ## 5. Dữ liệu món ăn
 
@@ -54,46 +55,34 @@ Mỗi món ăn gồm các trường: `foodId` (mã món, không trùng), `name`,
 
 ### Backend
 
-```bash
+​```bash
 cd backend
 npm install
 npm start
-```
+​```
 
 Backend cần tệp `.env` (không đưa lên GitHub), ví dụ theo mẫu `.env.example`:
 
-```text
+​```text
 PORT=5000
 MONGODB_URI=<chuỗi kết nối MongoDB Atlas>
-```
+​```
 
 Kiểm tra backend: `GET /health`
 API món ăn: `GET/POST /api/foods`, `GET/PUT/DELETE /api/foods/:id`, tìm kiếm: `GET /api/foods?search=pho`
 
 ### Frontend
 
-```bash
+​```bash
 cd frontend
 npm install
 npm run dev
-```
+​```
 
 Địa chỉ backend được cấu hình bằng biến môi trường `VITE_API_URL` để thay đổi được khi triển khai lên đám mây.
 
 ## 7. Docker
 
-_Hướng dẫn chạy backend và frontend bằng Docker sẽ được cập nhật ở Câu 5 và Câu 6._
-
-## 8. Liên kết triển khai
-
-| Thông tin | Đường dẫn |
-|---|---|
-| GitHub | _Cập nhật sau Câu 1_ |
-| Docker Hub backend | _Cập nhật sau Câu 5_ |
-| Docker Hub frontend | _Cập nhật sau Câu 6_ |
-| Render frontend | _Cập nhật sau Câu 7_ |
-| Render backend API | _Cập nhật sau Câu 8_ |
-| MongoDB Atlas database | `236582_NguyenKhanhBang` / collection `foods` 
 ### Backend (Câu 5)
 
 Image đã build và đẩy lên Docker Hub: https://hub.docker.com/r/khanhbang151/backend
@@ -111,5 +100,26 @@ Kiểm tra hoạt động: http://localhost:5001/health
 
 ### Frontend (Câu 6)
 
-_Cập nhật ở Câu 6._
-|
+Image đã build và đẩy lên Docker Hub: https://hub.docker.com/r/khanhbang151/frontend
+
+Build image tại máy (VITE_API_URL được nhúng vào bản build, mặc định http://localhost:5000):
+
+    cd frontend
+    docker build -t khanhbang151/frontend:latest .
+
+Chạy container:
+
+    docker run -d --name foodmanager-frontend -p 8080:80 khanhbang151/frontend:latest
+
+Mở giao diện: http://localhost:8080
+
+## 8. Liên kết triển khai
+
+| Thông tin | Đường dẫn |
+|---|---|
+| GitHub | https://github.com/NguyenKhanhBang151/236582_NguyenKhanhBang |
+| Docker Hub backend | https://hub.docker.com/r/khanhbang151/backend |
+| Docker Hub frontend | https://hub.docker.com/r/khanhbang151/frontend |
+| Render frontend | _Cập nhật sau Câu 7_ |
+| Render backend API | _Cập nhật sau Câu 8_ |
+| MongoDB Atlas database | `236582_NguyenKhanhBang` / collection `foods` |
